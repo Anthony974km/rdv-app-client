@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-dat e-pickers/LocalizationProvider';
+import { LocalizationProvider} from "@mui/x-date-pickers";
+
 const Home = () => {
     const [dateSelect, setDateSelect] = useState( "")
     return (

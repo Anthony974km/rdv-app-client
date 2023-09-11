@@ -1,0 +1,51 @@
+body{
+  background-color: #E3C0C0;
+  font-family: 'Lato';
+}
+/* Style de la barre de navigation */
+header {
+  background-color: #F08A8A;
+  font-family: 'Lato';
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Espace intérieur de la barre de navigation */
+}
+
+/* Style du logo et du nom du logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: whitesmoke; /* Couleur du texte du logo */
+}
+
+.navbar-logo img {
+  max-width: 40px; /* Largeur maximale de l'image du logo */
+  margin-right: 10px; /* Espace entre l'image et le texte du logo */
+}
+
+/* Style des boutons et du sélecteur de langue */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-button {
+  background-color: transparent; /* Bouton transparent */
+  border: none; /* Supprime la bordure */
+  color: whitesmoke; /* Couleur du texte des boutons */
+  margin-left: 10px; /* Espace entre les boutons */
+  cursor: pointer;
+}
+
+.navbar-language {
+  background-color: transparent; /* Sélecteur de langue transparent */
+  border: none; /* Supprime la bordure */
+  color: whitesmoke; /* Couleur du texte */
+  margin-left: 10px; /* Espace entre le sélecteur et les boutons */
+}
+
+  

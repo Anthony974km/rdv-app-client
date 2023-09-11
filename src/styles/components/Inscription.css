@@ -1,0 +1,37 @@
+.inscription-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Pour qu'il prenne la totalité de la hauteur de la fenêtre */
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Pour s'assurer qu'il occupe toute la hauteur de la fenêtre */
+}
+
+.inscription-form-container {
+    /* Si vous avez des styles spécifiques pour ce conteneur, ajoutez-les ici */
+    max-width: 500px; /* Pour limiter la largeur du formulaire */
+    width: 100%; /* Pour qu'il prenne la totalité de la largeur possible */
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.inscription-form {
+    /* Si vous avez des styles spécifiques pour le formulaire, ajoutez-les ici */
+}
+
+.button-container {
+    margin-top: 1rem;
+    text-align: center; /* Pour centrer le bouton */
+}
