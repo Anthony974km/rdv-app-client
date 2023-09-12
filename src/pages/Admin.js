@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import apiInstance from '../config/Api';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const Admin = () => {
   const [reservations, setReservations] = useState([]);
-  const [error, setError] = useState('');  // Pour stocker et afficher les erreurs
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [sortConfig, setSortConfig] = useState({ key: 'debut', direction: 'ascending' });
+
+  const sortReservations = (key) => {
+    let direction = 'ascending';
+
+    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+
+    const sortedReservations = [...reservations].sort((a, b) => {
+      if (a[key] < b[key]) {
+        return direction === 'ascending' ? -1 : 1;
+      }
+      if (a[key] > b[key]) {
+        return direction === 'ascending' ? 1 : -1;
+      }
+      return 0;
+    });
+
+    setReservations(sortedReservations);
+    setSortConfig({ key, direction });
+  };
 
   useEffect(() => {
     async function fetchReservations() {
@@ -26,6 +49,7 @@ const Admin = () => {
 
     fetchReservations();
   }, []);
+
   async function toggleValid(reservation) {
     try {
       setLoading(true);
@@ -46,6 +70,7 @@ const Admin = () => {
     }
     setLoading(false);
   }
+
   return (
       <div>
         <h1 className='title'>Administrateur</h1>
@@ -57,22 +82,47 @@ const Admin = () => {
               <thead>
               <tr>
                 <th>ID</th>
-                <th>Date de début</th>
+                <th onClick={() => sortReservations('debut')} style={{ cursor: 'pointer' }}>
+                  Date de début
+                  {sortConfig.key === 'debut' && (
+                      sortConfig.direction === 'ascending' ?
+                          <ArrowUpwardIcon fontSize="small" /> :
+                          <ArrowDownwardIcon fontSize="small" />
+                  )}
+                </th>
                 <th>Est validé</th>
-                <th>Client</th>
+                <th onClick={() => sortReservations('client')} style={{ cursor: 'pointer' }}>
+                  Client
+                  {sortConfig.key === 'client' && (
+                      sortConfig.direction === 'ascending' ?
+                          <ArrowUpwardIcon fontSize="small" /> :
+                          <ArrowDownwardIcon fontSize="small" />
+                  )}
+                </th>
               </tr>
               </thead>
               <tbody>
-              {reservations.map((reservation) => (
-                  <tr key={reservation.id}>
-                    <td>{reservation.id}</td>
-                    <td>{reservation.debut}</td>
-                    <td>  <button className="btn btn-outline-secondary btn-sm" onClick={() => toggleValid(reservation)}>
-                      {reservation.valide ? 'Oui' : 'Non'}
-                    </button></td>
-                    <td>{reservation.client}</td>
+              {reservations.length === 0 ? (
+                  <tr>
+                    <td colSpan="4" style={{ textAlign: "center" }}>Aucune réservation trouvée.</td>
                   </tr>
-              ))}
+              ) : (
+                  reservations.map((reservation) => (
+                      <tr key={reservation.id}>
+                        <td>{reservation.id}</td>
+                        <td>{reservation.debut}</td>
+                        <td>
+                          <button
+                              className="btn btn-outline-secondary btn-sm"
+                              onClick={() => toggleValid(reservation)}
+                          >
+                            {reservation.valide ? 'Oui' : 'Non'}
+                          </button>
+                        </td>
+                        <td>{reservation.client}</td>
+                      </tr>
+                  ))
+              )}
               </tbody>
             </table>
         )}

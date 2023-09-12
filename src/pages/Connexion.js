@@ -11,6 +11,7 @@ const Connexion = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [role, setRole] = useState(null);
+    const [email, setEmailLocal] = useState(null);
 
 
     async function fetchUserRole(token) {
@@ -45,6 +46,7 @@ const Connexion = () => {
                 throw new Error('Token non reçu');
             }
             localStorage.setItem('token', data.token);
+            localStorage.setItem('email', username);
 
             setIsAuthenticated(true);
             localStorage.setItem('isAuthenticated', 'true');

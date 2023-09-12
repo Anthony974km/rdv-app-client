@@ -5,6 +5,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider} from "@mui/x-date-pickers";
 import { TextField } from '@mui/material';
+import { format } from "date-fns-tz";
 
 
 import '../styles/components/Reservation.css';
@@ -116,10 +117,10 @@ const Reservation = () => {
         e.preventDefault();
 
         try {
+            const formattedDate = format(startDate, "yyyy-MM-dd'T'HH:mm:ss.SSSX", { timeZone: "Europe/Paris" });
             setLoading(true);
-
             const response = await apiInstance.post('/api/reservation/create', {
-                debut: startDate.toISOString(),
+                debut: formattedDate,
                 valide: 0,
                 professionel_id: professionelId
             });

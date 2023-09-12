@@ -24,6 +24,7 @@ apiInstance.interceptors.response.use(
         if (error.response && error.response.status === 401) {
             localStorage.removeItem('token');
             localStorage.removeItem('role');
+            localStorage.removeItem('email');
             localStorage.setItem('isAuthenticated', 'false')
             throw new Error('UnauthorizedError');
 

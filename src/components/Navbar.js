@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const role = localStorage.getItem('role');
+  const email = localStorage.getItem('email');
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(
       localStorage.getItem('isAuthenticated') === 'true'
@@ -17,6 +18,7 @@ const Navbar = () => {
     setIsAuthenticated(false);
     localStorage.removeItem('token');
     localStorage.removeItem('role');
+    localStorage.removeItem('email');
     navigate('/connexion');
   }
 
@@ -33,7 +35,11 @@ const Navbar = () => {
               <option value="fr">Français</option>
               <option value="en">Anglais</option>
             </select>
-
+            {isAuthenticated && (
+                <div className="welcome-message">
+                  Bienvenue, {email}
+                </div>
+            )}
             {/* Si l'utilisateur n'est pas connecté */}
             {!isAuthenticated && (
                 <>
