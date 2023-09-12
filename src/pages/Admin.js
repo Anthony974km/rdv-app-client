@@ -8,6 +8,10 @@ const Admin = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [sortConfig, setSortConfig] = useState({ key: 'debut', direction: 'ascending' });
+  const [searchTerm, setSearchTerm] = useState('');
+  const filteredReservations = reservations.filter(reservation =>
+      reservation.client.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const sortReservations = (key) => {
     let direction = 'ascending';
@@ -74,6 +78,14 @@ const Admin = () => {
   return (
       <div>
         <h1 className='title'>Administrateur</h1>
+        <div className="search-bar">
+          <input
+              type="text"
+              placeholder="Rechercher par e-mail"
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+          />
+        </div>
 
         {error ? (
             <div className="error-message">{error}</div>
@@ -102,12 +114,12 @@ const Admin = () => {
               </tr>
               </thead>
               <tbody>
-              {reservations.length === 0 ? (
+              {filteredReservations.length === 0 ? (
                   <tr>
                     <td colSpan="4" style={{ textAlign: "center" }}>Aucune réservation trouvée.</td>
                   </tr>
               ) : (
-                  reservations.map((reservation) => (
+                  filteredReservations.map((reservation) => (
                       <tr key={reservation.id}>
                         <td>{reservation.id}</td>
                         <td>{reservation.debut}</td>
