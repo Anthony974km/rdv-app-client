@@ -192,7 +192,6 @@ const Reservation = () => {
                                 <table className="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>Date</th>
                                         <th>Heure</th>
                                         <th>Valide</th>
@@ -203,7 +202,6 @@ const Reservation = () => {
                                     <tbody>
                                     {reservations.map(reservation => (
                                         <tr key={reservation.id}>
-                                            <td>{reservation.id}</td>
                                             <td>{formatDate(reservation.debut)}</td>
                                             <td>{formatHour(reservation.debut)}</td>
                                             <td>{reservation.valide ? 'Oui' : 'Non'}</td>

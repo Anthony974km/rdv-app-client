@@ -25,19 +25,17 @@ const Navbar = () => {
   return (
       <header>
         <div className="navbar">
+        <Link to="/home">
           <div className="navbar-logo">
             <img src="logo192.png" alt="Logo" />
             <h1>Logoipsum</h1>
           </div>
+          </Link>
           <div className="navbar-right">
-            <LanguageIcon />
-            <select className="navbar-language">
-              <option value="fr">Français</option>
-              <option value="en">Anglais</option>
-            </select>
+            
             {isAuthenticated && (
                 <div className="welcome-message">
-                  Bienvenue, {email}
+                  Bienvenue {email} !
                 </div>
             )}
             {/* Si l'utilisateur n'est pas connecté */}
@@ -62,7 +60,7 @@ const Navbar = () => {
 
                   <Link to="/reservation">
                     <button className="navbar-button">
-                      Mes réservation
+                      Mes réservations
                     </button>
                   </Link>
                   )}
@@ -70,7 +68,7 @@ const Navbar = () => {
 
                   <Link to="/admin">
                     <button className="navbar-button">
-                      Admin
+                      Réservations
                     </button>
                   </Link>
                   )}

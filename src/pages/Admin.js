@@ -93,17 +93,7 @@ const Admin = () => {
             <table className='admin-table'>
               <thead>
               <tr>
-                <th>ID</th>
-                <th onClick={() => sortReservations('debut')} style={{ cursor: 'pointer' }}>
-                  Date de début
-                  {sortConfig.key === 'debut' && (
-                      sortConfig.direction === 'ascending' ?
-                          <ArrowUpwardIcon fontSize="small" /> :
-                          <ArrowDownwardIcon fontSize="small" />
-                  )}
-                </th>
-                <th>Est validé</th>
-                <th onClick={() => sortReservations('client')} style={{ cursor: 'pointer' }}>
+              <th onClick={() => sortReservations('client')} style={{ cursor: 'pointer' }}>
                   Client
                   {sortConfig.key === 'client' && (
                       sortConfig.direction === 'ascending' ?
@@ -111,6 +101,16 @@ const Admin = () => {
                           <ArrowDownwardIcon fontSize="small" />
                   )}
                 </th>
+                <th onClick={() => sortReservations('debut')} style={{ cursor: 'pointer' }}>
+                  Date et heure
+                  {sortConfig.key === 'debut' && (
+                      sortConfig.direction === 'ascending' ?
+                          <ArrowUpwardIcon fontSize="small" /> :
+                          <ArrowDownwardIcon fontSize="small" />
+                  )}
+                </th>
+                <th>Validation</th>
+                
               </tr>
               </thead>
               <tbody>
@@ -121,7 +121,7 @@ const Admin = () => {
               ) : (
                   filteredReservations.map((reservation) => (
                       <tr key={reservation.id}>
-                        <td>{reservation.id}</td>
+                        <td>{reservation.client}</td>
                         <td>{reservation.debut}</td>
                         <td>
                           <button
@@ -131,7 +131,7 @@ const Admin = () => {
                             {reservation.valide ? 'Oui' : 'Non'}
                           </button>
                         </td>
-                        <td>{reservation.client}</td>
+                        
                       </tr>
                   ))
               )}
