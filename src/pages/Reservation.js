@@ -8,7 +8,7 @@ import { TextField } from '@mui/material';
 import { format } from "date-fns-tz";
 
 
-import '../styles/components/Reservation.css';
+import '../styles/pages/Reservation.css';
 import { useNavigate } from 'react-router-dom';
 
 const Reservation = () => {
@@ -167,11 +167,10 @@ const Reservation = () => {
                                 </div>
 
                                 <div className="mb-3">
-                                    <label className="form-label text-secondary">Date de début:</label>
+                                    <label className="form-label text-secondary">Date et heure:</label>
                                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                                         <DateTimePicker
                                             renderInput={(params) => <TextField {...params} />}
-                                            label="Date de début"
                                             value={startDate}
                                             onChange={setStartDate}
                                             ampm={false}
