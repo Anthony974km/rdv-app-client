@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import LanguageIcon from '@mui/icons-material/Language';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {

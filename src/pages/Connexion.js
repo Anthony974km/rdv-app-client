@@ -83,7 +83,7 @@ const Connexion = () => {
                         {message && <div className="alert alert-info">{message}</div>}
                         <div className="bg-white rounded p-4 shadow-lg">
                         <form onSubmit={handleSubmit} className="inscription-form">
-                            <h2 className="text-center" style={{ color: '#6c757d' }}>Bienvenu</h2>
+                            <h2 className="text-center" style={{ color: '#6c757d' }}>Bienvenue</h2>
                             <div className="form-group">
                                 <input
                                     type="text"

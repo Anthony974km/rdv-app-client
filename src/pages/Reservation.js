@@ -153,7 +153,7 @@ const Reservation = () => {
                     {message && <div className="alert alert-secondary">{message}</div>}
                     <div className="row">
 
-                        <div className="col-md-6">
+                        <div className="col-lg-6 col-md-12">
                             <h2 className="text-secondary">Créer une réservation</h2>
                             <form onSubmit={handleReservationSubmit}>
 
@@ -185,7 +185,7 @@ const Reservation = () => {
                             </form>
                         </div>
 
-                        <div className="col-md-6">
+                        <div className="col-lg-6 col-md-12">
                             <h2 className="text-secondary">Vos réservations</h2>
                             {Array.isArray(reservations) ? (
                                 <table className="table table-hover">
@@ -214,6 +214,31 @@ const Reservation = () => {
                                     ))}
                                     </tbody>
                                 </table>
+                                // <div>
+                                // <div className="row header-tab-resa">
+                                //     <div className="col-3">Date</div>
+                                //     <div className="col-1">Heure</div>
+                                //     <div className="col-1">Valide</div>
+                                //     <div className="col-3">Professionnel</div>
+                                //     <div className="col-4">Action</div>
+                                // </div>
+                                // {reservations.map(reservation => (
+                                // <div className="row content-tab-resa my-2">
+
+                                //     <div className="col-3">{formatDate(reservation.debut)}</div>
+                                //     <div className="col-1">{formatHour(reservation.debut)}</div>
+                                //     <div className="col-1">{reservation.valide ? 'Oui' : 'Non'}</div>
+                                //     <div className="col-3">{reservation.professionel_id}</div>
+                                //     <div className="col-4">
+                                //         <button className="btn btn-outline-secondary" onClick={() => handleDeleteReservation(reservation.id)}>
+                                //             Supprimer
+                                //         </button>
+                                //     </div>
+
+                                // </div>
+                                //     ))}
+                                    
+                                // </div>
                             ) : <div className="alert alert-warning">Pas de réservations trouvées.</div>}
                         </div>
 

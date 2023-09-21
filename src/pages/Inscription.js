@@ -53,7 +53,7 @@ const Inscription = () => {
                     <div className="bg-white rounded p-4 shadow-lg" style={{ maxWidth: '400px', backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
                         {message && <div className="alert alert-info">{message}</div>}
                         <form onSubmit={handleSubmit}>
-                            <h2 className="text-center mb-4" style={{ color: '#6c757d' }}>Bienvenu</h2>
+                            <h2 className="text-center mb-4" style={{ color: '#6c757d' }}>Bienvenue</h2>
                             <div className="form-group">
                                 <input
                                     type="email"
