@@ -22,10 +22,18 @@ const Reservation = () => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
+  function formatCourseDate(date) {
+    const dateObj = new Date(date + 'T00:00:00');
+    return new Intl.DateTimeFormat('fr-FR').format(dateObj);
+  }
+ 
   const formatHour = (dateString) => {
     const options = { hour: "2-digit", minute: "2-digit" };
     return new Date(dateString).toLocaleTimeString(undefined, options);
   };
+
+  useEffect(() => {formatCourseDate(startDate);
+  },[startDate])
 
   useEffect(() => {
     if (message) {
@@ -179,7 +187,7 @@ const Reservation = () => {
             <div className="row">
               <div className="col-lg-6 col-md-12">
                 <h2 className="text-secondary">Créer une réservation</h2>
-                <form onSubmit={handleReservationSubmit}>
+                <form className="reservation-form" onSubmit={handleReservationSubmit}>
                   <div className="mb-3">
                     <label className="form-label text-secondary">
                       Professionnel:

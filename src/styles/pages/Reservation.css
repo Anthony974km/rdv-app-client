@@ -1,7 +1,6 @@
-.reservations-container
-form {
+.reservation-form {
     background-color: #f8f9fa;
-    padding: 20px;
+    padding: 2rem !important;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
