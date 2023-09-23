@@ -1,0 +1,46 @@
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-container .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-container .container h1 {
+  color: #f5f5f5;
+  font-size: 3.5rem;
+  margin-top: 2rem;
+}
+.main-container .container p {
+  color: #f5f5f5;
+  background: none;
+  box-shadow: none;
+  font-size: 1.4rem;
+}
+
+.header-text {
+  width: 35rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 400px) {
+  .header-text {
+    width: 100%;
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .main-container .container h1 {
+    font-size: 2.5rem;
+  }
+  .main-container .container p {
+    font-size: 1rem;
+  }
+}

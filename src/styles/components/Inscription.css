@@ -3,35 +3,111 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Pour qu'il prenne la totalité de la hauteur de la fenêtre */
-}
-
-.loader {
+  }
+  
+  .loader {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Pour s'assurer qu'il occupe toute la hauteur de la fenêtre */
-}
-
-.inscription-form-container {
+  }
+  
+  .inscription-form-container {
     /* Si vous avez des styles spécifiques pour ce conteneur, ajoutez-les ici */
     max-width: 500px; /* Pour limiter la largeur du formulaire */
     width: 100%; /* Pour qu'il prenne la totalité de la largeur possible */
-}
-
-.message {
+  }
+  
+  .message {
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;
     border: 1px solid #007bff;
     color: #007bff;
     border-radius: 4px;
     text-align: center;
-}
-
-.inscription-form {
-    /* Si vous avez des styles spécifiques pour le formulaire, ajoutez-les ici */
-}
-
-.button-container {
+  }
+  
+  
+  .button-container {
     margin-top: 1rem;
     text-align: center; /* Pour centrer le bouton */
-}
+  }
+  
+  .inscription-card {
+    height: 32rem;
+    padding: 2rem;
+    border-radius: 2rem !important;
+    width: 18rem;
+    overflow: hidden;
+    position: relative;
+    background-color: #feabae !important;
+  }
+  
+  .inscription-card h2 {
+    z-index: 10;
+    color: #f5f5f5 !important;
+    margin-top: 3rem;
+  }
+  
+  .inscription-form {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .button-container button {
+    border-radius: 50%;
+    background-color: #8a4c7d;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+  }
+  .button-container h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  form {
+    padding: 0 !important;
+  }
+  
+  .inscription-form {
+    width: 100%;
+    margin-bottom: 0;
+    z-index: 10;
+  }
+  
+  .form-control-inscription {
+    background: #e0e0e0 !important;
+    border: none !important;
+    padding: 0.7rem 1.3rem !important;
+    border-radius: 0.8rem !important;
+    width: 100%;
+  }
+  
+  .form-control-inscription.password {
+    margin-bottom: 1rem;
+  }
+  
+  .ellipse3 {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    height: 15rem;
+    width: 19rem;
+    transform: rotate(5deg);
+    z-index: 2;
+  }
+  

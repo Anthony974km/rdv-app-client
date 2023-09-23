@@ -1,93 +1,91 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
-}
-
-table th, table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-table thead {
-    background-color: #f2f2f2;
-}
-
-table tr:hover {
-    background-color: #f5f5f5;
-}
-
-table th {
-    font-weight: bold;
-}
-
+.reservations-container
 form {
-    margin: 20px 0;
-    border: 1px solid #f2f2f2;
+    background-color: #f8f9fa;
     padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form div {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
+  }
+  
+  .form-label {
     font-weight: bold;
-}
-
-input[type="text"],
-input[type="datetime-local"],
-select {
+  }
+  
+  .form-select,
+  .TextField-root {
     width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #ddd;
+    padding: 10px;
+    border: 1px solid #ced4da;
     border-radius: 4px;
     font-size: 14px;
-}
-
-button {
-    background-color: #007BFF;
+  }
+  
+  .form-select:focus,
+  .TextField-root:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn-reserver {
+    background-color: #007bff;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-button:hover {
+  }
+  
+  .btn-reserver:hover {
     background-color: #0056b3;
-}
-
-p {
-    background-color: #e9ecef;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.container {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.form-section, .table-section {
-    flex: 1;
-    max-width: calc(50% - 10px);
-    margin: 5px;
-}
-
-
-.alert-message {
+  }
+  
+  /* Tableau de réservation */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .table thead {
+    background-color: #f2f2f2;
+  }
+  
+  .table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .table th {
+    font-weight: bold;
+  }
+  
+  /* Couleurs pour Valide */
+  .vert {
+    width: 20px;
+    height: 20px;
+    background-color: #28a745;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .rouge {
+    width: 20px;
+    height: 20px;
+    background-color: #dc3545;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  /* Message d'alerte */
+  .alert-message {
     background-color: #d4edda;
     color: #155724;
     border-color: #c3e6cb;
@@ -96,12 +94,35 @@ p {
     margin-bottom: 20px;
     text-align: center;
     border: 1px solid #c3e6cb;
-    width: 100%;
-    box-sizing: border-box;
-    display: block;
-    position: relative;
-}
-.content {
+  }
+  
+  /* Conteneur */
+  .reservations-container.container-fluid {
+    padding: 0;
+    margin: 0;
     display: flex;
-    align-items: flex-start; /* Aligne les enfants en haut */
-}
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .row {
+    margin: 0;
+  }
+  
+  /* Colonnes */
+  .reservations-container
+  .col-lg-6,
+  .col-md-12 {
+    padding: 10px;
+  }
+  
+  /* Styles généraux */
+  .reservations-container
+  .text-secondary {
+    color: #6c757d;
+  }
+
+  /* Bouton réserver */
+  .btn-reserve{
+    margin-left: 80%;
+  }
