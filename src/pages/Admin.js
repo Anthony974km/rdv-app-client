@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import apiInstance from "../config/Api";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import "../styles/pages/_Admin.scss";
+import { Navigate, Router, Redirect } from "react-router-dom";
 
 const Admin = () => {
+  
+  const token = localStorage.getItem("token");
+ 
+
   const [reservations, setReservations] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -86,15 +92,19 @@ const Admin = () => {
   }
 
   return (
+    !token ?
+    <Navigate to="/connexion" />:
     <div>
-      <h1 className="title">Administrateur</h1>
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Rechercher par e-mail"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      <div className="title-and-search">
+        <h1 className="title">Administrateur</h1>
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Rechercher par e-mail"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       {error ? (

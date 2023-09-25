@@ -1,17 +1,114 @@
-.title {margin-left: 10%;
-    color: whitesmoke;
+.title-and-search {
+  display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+  justify-content: space-between; /* Répartir l'espace disponible entre les éléments */
+  align-items: center; /* Centrer verticalement les éléments */
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  color: white;
 }
+
+.title {
+  margin-left: 10%;
+  margin-top: 2%;
+  color: white;
+  font: bold;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+  flex: 1; /* Occupe tout l'espace restant disponible */
+  margin-left: 10%; /* Espacement entre le titre et la barre de recherche */
+  margin-top: 15px;
+}
+
+/* Style pour le champ de recherche */
+.search-bar input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Champ de recherche */
+.search-bar input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc; /* Couleur de la bordure */
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px; /* Largeur maximale du champ de recherche */
+}
+
+/* Message d'erreur */
+.error-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #f44336; /* Couleur du texte en cas d'erreur */
+  font-weight: bold;
+}
+
+/* Tableau d'administration */
+.admin-table {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 800px; /* Largeur maximale du tableau */
+  font-size: 16px;
+  border-collapse: collapse;
+}
+
+/* En-tête du tableau */
+.admin-table th {
+  background-color: #f5f5f5; /* Couleur de fond de l'en-tête */
+  color: #333; /* Couleur du texte de l'en-tête */
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+  cursor: pointer;
+}
+
+/* Icônes de tri */
+.admin-table th svg {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Ligne du tableau */
+.admin-table tr {
+  border-bottom: 1px solid #ddd; /* Ligne de séparation entre les lignes */
+}
+
+/* Cellules du tableau */
+.admin-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+/* Bouton de validation */
+.admin-table button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Couleurs pour la validation */
 .vert {
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    border-radius: 50%;
-    margin-left: 0.5rem;
-  }
-  .rouge {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    margin-left: 0.5rem;
-  }
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50; /* Couleur verte */
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.rouge {
+  width: 20px;
+  height: 20px;
+  background-color: #f44336; /* Couleur rouge */
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
